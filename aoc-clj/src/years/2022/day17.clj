@@ -5,8 +5,9 @@
             [com.rpl.specter :as s])
   (:use debux.core))
 
-(def input ">>><<><>><<<>><>>><<<>>><<<><<<>><>><<>>" #_(string/trim-newline (util/read 17 2022)))
+(def input (string/trim-newline (util/read 17 2022)))
 (def turns 2022)
+(def turns2 1000000000000)
 (def shapes [[2r0011110] [2r0001000 2r0011100 2r0001000] [2r0000100 2r0000100 2r0011100] [2r0010000 2r0010000 2r0010000 2r0010000] [2r0011000 2r0011000]])
 (def shaft 2r1111111)
 (def jets (map (fn [c] (m/match c \> :right \< :left)) input))
@@ -30,37 +31,27 @@
 #_{:clj-kondo/ignore [:redefined-var]}
 (defn merge [lines other-lines] (vec (map bit-or lines (concat other-lines (cycle [0])))))
 (defn merge-in [start end-exc shape all-lines] (s/setval (s/srange start end-exc) (merge shape (subvec all-lines start end-exc)) all-lines))
+(defn pp [line*s]
+  (cond (coll? line*s) (string/join "\n" (map pp line*s))
+        :else (let [binary-string (apply str (map #(if (= % \1) \# \.) (Integer/toBinaryString line*s)))]
+                (str (apply str (repeat (max 0 (- 7 (count binary-string))) \.)) binary-string))))
 
-;; left-most rock is 2 away from left
-;; bottom-most rock is 3 away from bottom
-;; cycles between push and fall
 (def state {:lines (list shaft)
             :jets (cycle jets)
             :shapes (cycle shapes)})
 (defn turn [{:keys [lines jets shapes]}]
   (let [[shape & rest-shapes] shapes
-        pushed (reduce maybe-push shape (take 3 jets)) ;; is 3 right?
+        pushed (reduce maybe-push shape (take 3 jets)) 
         span (count pushed)
         padded-lines (vec (concat (repeat span 0) lines))
         parts (partition span 1 padded-lines)]
-    (loop [pushed pushed [part & rest-parts] parts prev (cycle [0]) prev-index -1 [jet & rest-jets] (drop 3 jets)]
+    (loop [pushed pushed [part & rest-parts] parts prev-index -1 [jet & rest-jets :as all-jets] (drop 3 jets)]
       (if (collides? pushed part)
         {:lines (drop-while zero? (merge-in prev-index (+ prev-index span) pushed padded-lines))
-         :jets rest-jets
+         :jets all-jets
          :shapes rest-shapes}
-        (recur (maybe-push part pushed jet) rest-parts part (inc prev-index) rest-jets)))))
-
-;; [1 2 3 4 5]
-;; span 3
-;; [1 2 3] [2 3 4] [3 4 5]
-
-;; [1 1] span 2
-;; [0 0 0 0 0]
-;; 0-1 1-2 2-3 3-4 
-;; [0 0] [0 0] [0 0] [0 0]
-;; [0 0] [0 0] [0 0] [1 1]
-
-;; if coll merge with previous?
-;; be careful with the jets
+        (recur (maybe-push part pushed jet) rest-parts (inc prev-index) rest-jets)))))
 
 (def part1 (height (:lines (nth (iterate turn state) turns))))
+;; maybe housekeep the lines whenever you have a 2r1111111 line and incrementally sum up the heights
+;; (def part2 (height (:lines (nth (iterate turn state) turns2))))
