@@ -1,0 +1,1492 @@
+; This is the Calva evaluation results output window.
+; TIPS: The keyboard shortcut `ctrl+alt+o o` shows and focuses this window
+;   when connected to a REPL session.
+; Please see https://calva.io/output/ for more info.
+; Happy coding! ♥️
+
+; Jacking in...
+; Connecting using "deps.edn" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+; Starting Jack-in Terminal: pushd /Users/t.eichholz/git/aoc/aoc-clj ; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]" ; popd
+; Using host:port localhost:63445 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉>  ; Use `alt+enter` to evaluate
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+#'years.2022.day17/part1
+clj꞉years.2022.day17꞉> 
+part1
+nil
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+#'years.2022.day17/part1
+clj꞉years.2022.day17꞉> 
+part1
+nil
+clj꞉years.2022.day17꞉> 
+part1
+nil
+clj꞉years.2022.day17꞉> 
+(get (iterate turn state) 0)
+nil
+clj꞉years.2022.day17꞉> 
+(get (iterate turn state) 1)
+nil
+clj꞉years.2022.day17꞉> 
+(turn state)
+{:lines (15 127),
+ :jets
+ (:right
+  :right
+  :left
+  :left
+  :right
+  :left
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :left
+  :right
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :left
+  :right
+  :right
+  :left
+  :left
+  :right
+  :right
+  :right
+  :right
+  :right
+  :left
+  :left
+  :right
+  :left
+  :right
+  :right
+  :left
+  :left
+  ...),
+ :shapes
+ ([8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  ...)}
+clj꞉years.2022.day17꞉> 
+(get (lazy-seq 1 2 3) 1)
+nil
+clj꞉years.2022.day17꞉> 
+(get (lazy-seq 1 2 3) 0)
+nil
+clj꞉years.2022.day17꞉> 
+(car (lazy-seq 1 2 3))
+; Syntax error compiling at (.calva/output-window/output.calva-repl:165:1).
+; Unable to resolve symbol: car in this context
+clj꞉years.2022.day17꞉> 
+(first (lazy-seq 1 2 3))
+; Execution error (IllegalArgumentException) at years.2022.day17/eval9334 (REPL:169).
+; Don't know how to create ISeq from: java.lang.Long
+clj꞉years.2022.day17꞉> 
+(first (lazy-seq [1 2 3]))
+1
+clj꞉years.2022.day17꞉> 
+(get (iterate inc 0) 0)
+nil
+clj꞉years.2022.day17꞉> 
+(get (iterate inc 0) 1)
+nil
+clj꞉years.2022.day17꞉> 
+(get (iterate inc 0) 2)
+nil
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+#'years.2022.day17/part1
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+; Execution error (ClassCastException) at years.2022.day17/height (day17.clj:22).
+; class clojure.lang.MapEntry cannot be cast to class java.lang.Number (clojure.lang.MapEntry is in unnamed module of loader 'app'; java.lang.Number is in module java.base of loader 'bootstrap')
+; Evaluation of file day17.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+; Execution error (ClassCastException) at years.2022.day17/height (day17.clj:22).
+; class clojure.lang.MapEntry cannot be cast to class java.lang.Number (clojure.lang.MapEntry is in unnamed module of loader 'app'; java.lang.Number is in module java.base of loader 'bootstrap')
+; Evaluation of file day17.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+#'years.2022.day17/turn
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+#'years.2022.day17/turn
+clj꞉years.2022.day17꞉> 
+height
+#function[years.2022.day17/height]
+clj꞉years.2022.day17꞉> 
+; Syntax error reading source at (REPL:210:35).
+; No reader function for tag function
+clj꞉years.2022.day17꞉> 
+(height [1 2 3])
+2
+clj꞉years.2022.day17꞉> 
+(height [1 2 0])
+2
+clj꞉years.2022.day17꞉> 
+(height [0 0 1 2 0])
+2
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+; Execution error (ClassCastException) at years.2022.day17/height (day17.clj:22).
+; class clojure.lang.MapEntry cannot be cast to class java.lang.Number (clojure.lang.MapEntry is in unnamed module of loader 'app'; java.lang.Number is in module java.base of loader 'bootstrap')
+; Evaluation of file day17.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+; Execution error (ClassCastException) at years.2022.day17/height (day17.clj:22).
+; class clojure.lang.MapEntry cannot be cast to class java.lang.Number (clojure.lang.MapEntry is in unnamed module of loader 'app'; java.lang.Number is in module java.base of loader 'bootstrap')
+; Evaluation of file day17.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+#'years.2022.day17/turn
+clj꞉years.2022.day17꞉> 
+(get (iterate turn state) 0)
+nil
+clj꞉years.2022.day17꞉> 
+(get (iterate turn state) 1)
+nil
+clj꞉years.2022.day17꞉> 
+(turn state)
+{:lines (30 127),
+ :jets
+ (:right
+  :left
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :left
+  :right
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :left
+  :right
+  :right
+  :left
+  :left
+  :right
+  :right
+  :right
+  :right
+  :right
+  :left
+  :left
+  :right
+  :left
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :left
+  ...),
+ :shapes
+ ([8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  ...)}
+clj꞉years.2022.day17꞉> 
+(turn (turn state))
+{:lines (2 7 2 30 127),
+ :jets
+ (:left
+  :left
+  :right
+  :right
+  :left
+  :right
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :left
+  :right
+  :right
+  :left
+  :left
+  :right
+  :right
+  :right
+  :right
+  :right
+  :left
+  :left
+  :right
+  :left
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :left
+  :right
+  :right
+  :right
+  :left
+  :left
+  ...),
+ :shapes
+ ([1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  ...)}
+clj꞉years.2022.day17꞉> 
+; Syntax error compiling at (.calva/output-window/output.calva-repl:356:2).
+; Unable to resolve symbol: ... in this context
+clj꞉years.2022.day17꞉> 
+(nth (iterate turn state) 0)
+{:lines (127),
+ :jets
+ (:right
+  :right
+  :right
+  :left
+  :left
+  :right
+  :left
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :left
+  :right
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :left
+  :right
+  :right
+  :left
+  :left
+  :right
+  :right
+  :right
+  :right
+  :right
+  :left
+  :left
+  :right
+  :left
+  :right
+  :right
+  :left
+  ...),
+ :shapes
+ ([30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  ...)}
+clj꞉years.2022.day17꞉> 
+(nth (iterate turn state) 1)
+{:lines (30 127),
+ :jets
+ (:right
+  :left
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :left
+  :right
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :left
+  :right
+  :right
+  :left
+  :left
+  :right
+  :right
+  :right
+  :right
+  :right
+  :left
+  :left
+  :right
+  :left
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :left
+  ...),
+ :shapes
+ ([8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  ...)}
+clj꞉years.2022.day17꞉> 
+(nth (iterate turn state) 2)
+{:lines (2 7 2 30 127),
+ :jets
+ (:left
+  :left
+  :right
+  :right
+  :left
+  :right
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :left
+  :right
+  :right
+  :left
+  :left
+  :right
+  :right
+  :right
+  :right
+  :right
+  :left
+  :left
+  :right
+  :left
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :left
+  :right
+  :right
+  :right
+  :left
+  :left
+  ...),
+ :shapes
+ ([1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  ...)}
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+#'years.2022.day17/part1
+clj꞉years.2022.day17꞉> 
+part1
+5701
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+; Execution error (IllegalArgumentException) at years.2022.day17/fn$fn (day17.clj:10).
+; No matching clause: 
+; 
+; Evaluation of file day17.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+; Execution error (IllegalArgumentException) at years.2022.day17/fn$fn (day17.clj:10).
+; No matching clause: 
+; 
+; Evaluation of file day17.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉years.2022.day17꞉> 
+input
+">>>><<<<><<>>><<<>>>><<>>>><<<<>>><<>>>><<><<<<><<><<<<>><<>>>><>>><<>>>><<<>><>>>><<><>><<<><<><<<<><<<>>><<>>><<<<>>>><<>><<>>>><<<>>><<<>>>><<<><><>><<><<<<><>>>><>><<<><<<>>><><<<>><<<>>><<><<>>><>><<><<<<>>>><><<<<>>><<<>>>><<>>><<<>>><<>>>><<><><<<<>>><<<<>><<<><<<><<<>>>><<<<>>>><<<<>>><<>><<<>>>><><<<<>><<<><<<<>>><<>>><>>><<><>>><<>><<>>><<<>><<<<>>>><<><<>><<<<>>>><<><<><<<>><<><<<>>><<<<><<>><<<<>>>><<>>><<><>>><<>>><<<><>><<<<>><<<<><>>>><<><<><<>>>><><<>>><>>>><>><<<>><><>>><>>>><<<<>><><<><>>>><<<>>><><<<>>><<>><<>><><><<<>><>>>><>>>><>>><<><<<<>>>><>><<<<>><>>>><<<>><<<<>>>><<<<>><<<>>>><<>>>><<<<>>><<<<>>><>><<<>>>><<<>>>><>>>><<<<><>><<>>><<<>>>><<><<>><<<<><<<<><<<<>>>><<>>><>><<<>>><<<<><<>><<<<>>><<<<>>>><<>><<<<><<<>>><<<>><<<><<<><><>>><>>>><<<>>><<<>><<<<>>>><<<<>><<<<>><<<><<<<>>><>>>><<><<<>>>><<>>>><<><<<<>><<<>><<<<>><><<<><<><<>>>><<<>><<><<>>>><>><<<<><>>>><<>><<<><<<<>>><<>>><<>>>><>><><<>><<>>>><<>>>><<<<>>>><<<<>>><<<><>>><<<<>>>><<<<>>>><<<<>>>><>>><>><<>><<>>>><<>>>><>>>><<>>><<>>>><<>>>><<>><<<<>>><<>><<<<>>><>>><<<<>>><<<<>>><<<<>><<<>><<<<>><<<>><<>>>><<<>>>><<>>><<<>>>><<<<>>>><<<<><<<<>>>><>>>><<<<>>><<<<>>>><>>><<<><<><><<<><><<<>>>><>>><<><><<<<>><<>>>><<<>><>>><<<<>><>>><<<<>>>><<<<>>><>><<<>><<><>>><<<<>><<<<><>>><<<>>>><>>>><>>><<<>>><><>>>><<<><<<><<<<><<<>><<>>><<<<>>><<<>>>><<>>>><<<><<<<>>>><<<>>>><<>><<<<><<<<>>>><>>>><<<<>><<><<>>><<><>>>><<<>><<<><<<>>>><<<<><<<>>><<<<>>>><<><<>><>><<<<>>>><<>><<<><<<<>><<><<<>><<<><<<>>>><<<<><<<<>>><<<<>>>><<<<>>>><<<>>>><<<>><<>><>>><<<<>><>><>>>><<<><<<><<<<>>><<<>>>><<<>>>><<<<><<><<<<><<<>>><<>>>><<<>>><<<<>>><>>><<<<>>>><<<>>>><>>><<<<>>>><>><<<<>><<>>>><<>>>><<<><>>><<<>>>><<><<<<>>>><<<>>>><<>><<>><><<>><<<><>>><<>>><<<<><<><<>>>><<<><<<>><<>>><<<>>>><<<<><><<<<>>>><<<<>>>><<<<>><><>>>><<><<<<>>><<>><<<><><<<>>>><<<<>>>><<<>><<<<><<<<><<<>><>>><<<>>>><>>><<>>><<<<>><><<<>>>><<>>>><<<<>><<>><<<>><<>><<>>>><<<>><<<>>><>><>>><><<<>><>>><><<<>>><<<>><<<>>><<><<<>><<<>><<<<><>>>><<<>>><<<>>>><<<>>><>>><<>>><<>>>><<<>>><<<<>><<>>>><<>><<<<><>><<<>>><<<<>><<>>>><<>><<<>>>><<<>>><<>>><<<>>>><<<>><<>>>><<<>><>><<<><<<<>>><<>>>><<<>>>><<<><<<<>>><>>><<>>>><>>><<<<><>>>><<<>><<><>>><><<<<>>><<<<>>><<>>>><<<><<>>><>>>><<<<>>>><<<><<>>><<>>><>>>><><<<<><<<<>><<<<><<<<>>>><<<><<<<><>>><<<<>>>><<<<>>>><<<><>>><<<>>><<>><<>>>><<<<>>><<><<<<>><<<>><>>><>>>><>>><<>>><<><<><<<<>>>><>>><>>><<<<>>>><>><<><>>><<<<><<<>>><<<<><<<<><<>>>><<>>><<<<>><<<>>>><><><>>>><>>>><>>><><<>>><<<>><<<>>>><><<>>><>>><<>>>><<>><<<<>><<>>>><<<>>>><<<><<<><<<>>><<<>>>><<<<><<>>>><<>><<<>>><<<<>>><<<>>>><<<>>><<>><<>>><<>>><<<<>>><<><><>><><<<<>><<<<>>><<<>>><<<<>>><<>>>><<<<><<<>>>><<><<<>>>><<>><<>>><<<>>>><<>><<<<><<>><<><<<<><<<<>>>><>>><<<<><<<<><<<<>>>><<<<>><<<<>>><>>>><<>>><<>>>><<<<>>><<>>>><<>>>><<><<>>><<<<>>>><>>>><>><<>>><<>>><<<><<>>>><>>>><>>><<>>>><<<<>><<<<><<<<>>>><<<><<<>>><<<>>>><<>><<<>><<<>><<><<<<><>>><>><><<<<>>><<<>>><<<<>>>><<>>>><<<><<>>><<>>><>>>><<<<><><<<<>>>><><<<<>>><<<>>>><>>><><<>>>><<>>>><<<<>><<>><<>>>><<<<>>><>><><>>>><<<>>><<<<>>>><>>>><<<><>>>><<><<<<>>>><<<<>><<<>>>><<><<<<><<<<><<<>>><<><<<>>>><<<><<<<>>><<>>>><<><<<<>>>><<<>><<><><><<<<>>><>><>>><<<<>><<<<>><<<<>>>><<>><<<<>><<<>>><><<><<>><>><<<>>><<<<>>>><<<<><>>><>><<<><>><<<>>>><<<><>><<>>><>>>><<>>>><>>><<<>>><<<>>>><<<>>>><<><<>><<<<><<>>>><<>><><>>>><<<><<>>><<>><<><>><<<<>>>><<>>>><<<<><<>>><>>><>><>><<<<>><<>><<>>><>>><<<<><<>>>><>>>><<><>>><<<>>>><<<>>><<<>>><<>><>>><<<<>>>><>>><>><><<>>>><<<<>>><<<><<<<>><<<><<<<><<<>>><<<<>>><>>>><><>>><<>>>><<>>><<>>><<<<>><<<>>><<>>><<<<>>>><<<<>><<<>>>><<><<<><<<>><<<<>>>><>>><<<<>><<<>><><<<<>>><<<><<><<<<>>>><<>>><<<<>><<>><>><<<<>>>><<<>><>><<>>>><<>><<<<>>>><>>>><>><>>>><<<<>>><>>>><><>>>><>>><<>>><<<<>>>><>>>><<<>>><<<><<>>><<<<>><<<>>><<<<>>>><<<>>><<<<>><<><<><<<<>>>><>><<>><<>>><<><<><>>>><>>>><<<<><<<<><<<>><<>><<><>>><<<<>>><><>><<<<>>><<><<<>><<<>><<>>><>>>><>>>><>>>><<<<>>><<<<>><<>>><<<<>><<<>>>><<<<>>>><<<<>><<<>><><<>>>><>>><>><<>>><<<<>><>><<><<<>>>><<<<>><><<><<<>>>><<<>>><<<>>><<<<>>>><<<<>>>><>><>>>><<>>>><<<>>><<>>><<<>><<<>><<<>>>><<<<>>>><>>>><<>><<>>>><<<>>><<<>><<<<>>><>>>><>>>><<<<>>><<>>>><<<><>><<<<>>>><<<>>>><<<><<<>><><>>>><<<><<<<>>><<>>><<<>><<<<>><<<>><<><>>><>><<<><><>>><<>>><<<>>>><<><><<><>>>><<<><<<>><><<>><><<<>>><<<>>>><<<<>>><<<<><<<<>>>><<<>><<<>>><<>>>><<><<>>>><>><<<<>>><<><<><<><<<>>>><>>><>>>><>>><<<<><<<<><<<>>><<<>>><>><<<<>><<<<>><<><<<<>>>><<><>>><>><<<<>>>><<<<>>><>>><>>>><>><<>>><<<<>><<>><><><<>>>><<>>><<<>>>><<<>>><<>>><<>>><>>>><<<<>><>>>><<<<>>><<><<>><>>><>><<<>>>><<<>>>><>><<>><<<>>>><<<>>><<>>><<>>>><<><>><<>><<><<>><<<>>>><<<>>>><><<>><<>><>>>><>>>><<>><<<<>>><><>>><>>><<<<>>>><<>>>><<<<>><<<<>><<<<><<<>><<<<>>><>>>><<<>>><>><<>>>><<<>>><<<<>>><<><<>><<<<>>>><<<>>>><<<<>><<<<><<>>><><>>><<<<>>><<<>>>><<<><<<>>>><>>><<<<>>><><<<<>>>><<>><<<<>>>><<>>>><>>>><<<<><>><<>>>><>><<><<<<>><<<>><>>>><>>>><<<<>>><<<<><<<><<<>>>><>><<<><<<><>>><<<<>><><<<>>>><>><<<><<<>><<<<>>><<>>>><><<<>><>>>><>><>>>><<<>><<<<>><<<<>><<<<>>>><><<<>><><>>>><<>>><<<><<><><>>>><<>><<<<>>><<<<><>><<<><<>><<>>>><<<<>><<>>><>><<<><>>><>>><<><><<<><<<<>><><<<>><<<<><><<>><<<<>>><<>>>><<<<>><<>>>><<><<>>><<>>><<<<>><<<>>><<<>>>><<<>><<<>>><<<>>>><<<<>>><>>><<>>><<>><>><<<<>><<<<>>>><<<>><<<>>><<<>><<<<>>><<<<>><<<><<<>><<<<><<<<>><<<>>><<><<<><<>><<<>>><<>>>><>><><>>>><<<<>>>><<><<<>>><<<<>>><>>><<><<<<>>>><<<><<>><>>>><<<><<<>>><<><<<><<><>>>><<<>><<>>>><<<>><>>><<>><<>>>><<>><>>>><>>>><<<><<<>>>><<<>>>><<<>><>>>><><<<>>><<<<>>>><<>><<<<>>>><<>><<<>><<<>>><<<<>><>>>><>><<<<>>>><<<<><<><<<<>><<<>>>><<<<>>>><<>>>><>>>><<<<>><>>>><<<>>>><<<<><<<<>>>><<<<>>><<>>>><<>>>><<<>>>><<<>><<<<><>>>><<>>>><<>><<>>><<<<>><<<>>><<<>>><>>><<>>>><<<>>>><<>>><<<><<<>>>><<<><<<<>><<<<>>><>>><<<<>>><<><<<>>>><>><<<<>>><><<<>><<<<>>><<<<>><<<<>>><<>>>><<<><<<><<<>>><<<><>>>><<<><<<><>>>><>>><><<>><>><<<<>><<<<>><<>>><>>><>>>><<>><<>><>>>><>>>><<><><>>><<<>>><<<<>>>><<>>><<<>>><>>><<>><<<><<<>><<<><<>>>><<<<>>><<<><<<<>>>><<<<><>>><<<>>>><><<<><<<>>>><>><<<>><<><<<<><>>>><<<>>><<<>>>><>><>>>><><<><<<>>>><<>>><<<<>><<<<>><<>>>><<>><<<<>>>><<<>>><><><<<<>><<<<><<<>><<<>>><<<<><<<<>><<<<>><<<><<><>><<>>><<<><>><<<<>>>><>>>><<<<>>><<<>>><>>>><<>><<>>><<<<>>>><<>><<<<>><>>>><<<>>>><<>>><<<><<<><<>>>><<<<>>><<<>><<<<>>>><<>>><<>>>><>>><<<<>><>><<<>>><<<>><<<><>><<>>>><<<<>>><<<>><>>>><<<>><<>>><<<<><<<>><<>><<<>>>><<>>><<<<>>>><>>><>><<><><<<<>>><>>><<<<>>>><<<<>>>><<>><>>>><<<<>>><<<><<<<>>><<<<><<<><>><<<><<<<><>>><<<>>>><<>><<<<>>>><<<>>><<>>><<<<><<<>><<<>>><<<>><<<<>><<<><<>><>>>><<<>>>><<<>>>><<<<>>><<>><<<>>><<<<>><<<<><<<>>><<>>><>><<><<<<>><<<<>><<<>>><<>>><>>><<<<>><>>><<><<<>>>><>><<>><<<<>>><<><<<<>>><<<>>>><<<<><>><<<>><<>><<><>>>><>>>><<>><><<>>>><<><><<<><>><<<<>><<<<><<>>>><>>><<<<><<>>>><>><>>><>><<><>><>>><<<><<<>><><<<><<<<>><<>><<>>><<<>>>><<>><<><<<><<<<>>><>>>><<<>>><<<>>><<>>>><<>>>><<<<>>><>>>><>>>><<<<>>><<<>><><>>><<<>>>><<<<>>><<<>>>><<<>>><<<<>>>><<<>><>>><<>>>><<<><>>><>>>><<<<><<>>><><<>><<<<>>>><<<<>>>><<<>>>><<<<>>><<>>><<<><<>>><<<<>>>><<<>>><<<>>><<<>><<<<>><<<<>>>><<<><<<<>>><<<>>><<>>>><<<>>>><>><<<>><<<<>><<<<>>>><<<<><<<<>>><<><<><>>><<<<>><<>><<<><<>>>><<><<>>>><<<<>><><<<<>>>><<>><<<>>>><<><<<<><>><>>><<>><><<><<<>><<>>><>>>><>><<<><>>><<>>><<><>>><<<>><>>><<<<>>>><<>>>><<<<>>>><<<><<<>><<<<>>><><<<<>>><>>><<<>>><><<>>><<<>><<<<>>>><<<><<><>>><><<<>>>><<>><<<><>>><<>><<<><<<><<<>><><<>><<<>><<<>>><>><<<>>>><><>>><<<<>>><<<>>>><><>><<<<>><<<>>><<>>>><<<>><<>>>><>><><>>><<>>>><<<>>><<><><<>><<<<>>><<<>>>><>>><<>>>><>>><<<<>>>><<<<>><<><<<>>><>>><>>><><<>>><<<<>>>><<<<>>><<<>><>><<<>>>><<<<>>><<>>>><<<>><<>>><<<>><<<>>>><><<<<>><<>><<>><>>>><<<>><<>>><<><<<>><<<>><<<>>>><<<>>>><<<<>><<<>>>><><<>><><>>><<<<>><<<>><>><><>>><<<<>><<<<><<<>><<><<<<>>><<<<>>><<<>><><<<><<>>><<<<><<<><<<>>>><>><>><<<<>>>><><<>><<<><<<<>><<<><<>><<<>>><>><<<>>><<<>>>><<<<>>>><<<>>><<<<>>>><<<<>><<><<>>><<<<>><<<>>>><<<>>>><>>><>>>><>>>><<<<>>><<>>>><<<<><><<><<>><<>><>>>><<>><>>><><<<>>>><<>><><<<>>><>>>><<<<>>>><<<><<>>><<<<>>>><<<>>>><<<>><<<<><<<>>>><<<<>>>><<>>>><>><<<<><<><<<>>><>><<>>><<<<>>>><<<>>>><<>>>><><<>>><>>>><><<>>><<<>><<<>><<>><<<<>>><<<>>>><<<><<<<>>><<<>><<<><<<>><><>>><<<>><<<<>>><><<<>>>><>><>>><<<<>>><><<<<>>><><>>><><<<><>><<<>><>>><><<<><<>>><<<<><<<<>>>><<>>>><>>><<<>>><<>><>>>><<>>><<<>>>><<<>><<><>>>><<>>>><<<<><<<<><>>><>>><><<<<>>><<<<>><<<<>>><<<<>>><<<><<>>><<<>>>><<><<<<><<<>><<<<>>>><<<>>>><>>>><<>>>><<<<><<<<><<<>><<<<>><<<<>><><>>><>><>>>><<><<<>><>>><<<>><<<>>><<<>>><<<<><<<<>>>><<<><<<<>>><<<<><<>>><<<<><<>>>><<<>><<<>>><<<<>>>><<<>>><>>>><<<<><<<>>>><<<<><<>>><<<<>>>><<<><<<<>>><<<>><>><<>>><>>>><>>>><<<>>><>>><<<<>>><<>><>>>><>><>>>><<<<><<<<>>><<><<<><<<><>>><<>>>><>><>><>>><<<<>>>><><<>><<<>>>><<<>><<>>>><>><<<<><<<>>><<>>><<>>><<>><>><<>><>>><<<>><<<<><<<>><<<>>><<>><<<<>>><<>><<<<>>><<><<><<<<>>>><<<>>><<>><<>>>><<>><<>>><<<>>>><<<<>>><>>><<>><<>>><<<<>>><<<>>>><<>>><<<>><><<>>><<<>>><>>><<<<>><<<<><<<><<<>>><<>><<><<><<<<>>><<>>><>>>><<<>>><<<>><<>>><>><<>><<>><<<><<<><<>><<><>><<><>>><<<<><<<<>><<<<>>>><>><<<<><<<>>>><<>>><<<<>>><<<<>>><<>>>><<<>>>><<><<<<>>>><<<><<<<>>>><<<>><<<<><<<>><<>>>><>><<<<>><<>>><><<<<>>>><<<>>><<<<><<<<>>>><>>><>>><<<><<<><<<<><<<>>>><><<>>>><>><><<<<>><<<<>>><<>><<<>><<<><>><<>><<<>>>><><<<>>>><>>><<<>>><<<<><<<<>>><<<><><<<><<>>>><<<<>><<>>>><><<<<>>><<<><<<><>>>><<<<>>>><<<<><<<<>><<<>>><<>>><>>><<<<>><><<<>>><<<<>><><<>><<<>>><<>>><<<>>>><<<<>><>><<<<>>>><<>>><>>><<<<>>><>>><<<><<<<>>><>>><><>><<>>><<>><<<<>><<<<>><<<><<<>>><<<>>>><<>>><<<>><<<<>>>><>>><<><<>>><>>><<>>><<><<<<>>><<><<<<><<<>>>><<<<><<<<><>>><>>>><<<<>><<>><<<<><<<>>>><<>><>>>><>>>><<><<<<><<<<>>><<<>>><<<<>>>><><<<>>>><<<<>>>><><<>>><>>>><<<<>>>><<<>>>><>><<<>>><<<<><<>><<>>>><<<><><<>>>><<>>><>>>><<<>><<><>>>><>><<<>><<<>>>><<>>><<<>><<><<>>><<>>><>><<<>><>><<<<>>><<<<><<>>>><<<><>>><<>>>><><<<<>><<<>>>><><<<<>>><<<<>>><>>>><>>>><>>>><<<>><<<<>>>><<>><<><<>>><<<><><<<><<<<>>>><<><<><<<>>><>>><>><<>><<<<>>><<>><<<<>>><<<><<>>><<><<<>>><>>><<>><<><><<<<>><>>\n"
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+#'years.2022.day17/part1
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+#'years.2022.day17/part1
+clj꞉years.2022.day17꞉> 
+part1
+5614
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+#'years.2022.day17/part1
+clj꞉years.2022.day17꞉> 
+part1
+5527
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+#'years.2022.day17/part1
+clj꞉years.2022.day17꞉> 
+part1
+5701
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+; Execution error (NullPointerException) at years.2022.day17/turn (day17.clj:47).
+; Cannot invoke "Object.getClass()" because "x" is null
+; Evaluation of file day17.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+#'years.2022.day17/turn
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+; Execution error (NullPointerException) at years.2022.day17/turn (day17.clj:47).
+; Cannot invoke "Object.getClass()" because "x" is null
+; Evaluation of file day17.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉years.2022.day17꞉> 
+(drop-last 2 [])
+()
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+; Execution error (NullPointerException) at years.2022.day17/turn (day17.clj:47).
+; Cannot invoke "Object.getClass()" because "x" is null
+; Evaluation of file day17.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+; Syntax error reading source at (src/years/2022/day17.clj:46:45).
+; Unable to resolve symbol: line in this context
+; Evaluation of file day17.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+; Syntax error reading source at (src/years/2022/day17.clj:46:45).
+; Unable to resolve symbol: line in this context
+; Evaluation of file day17.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉years.2022.day17꞉> 
+; Jacking in...
+; Connecting using "deps.edn" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+; Starting Jack-in Terminal: pushd /Users/t.eichholz/git/aoc/aoc-clj ; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]" ; popd
+; nREPL Connection was closed
+; Using host:port localhost:64827 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; Evaluating file: day17.clj
+; WARNING: read already refers to: #'clojure.core/read in namespace: util, being replaced by: #'util/read
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+; Syntax error reading source at (src/years/2022/day17.clj:46:45).
+; Unable to resolve symbol: line in this context
+; Evaluation of file day17.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+4
+#'years.2022.day17/x
+clj꞉years.2022.day17꞉> 
+(state turn)
+nil
+clj꞉years.2022.day17꞉> 
+(turn state)
+{:lines (30 127),
+ :jets
+ (:right
+  :left
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :left
+  :right
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :left
+  :right
+  :right
+  :left
+  :left
+  :right
+  :right
+  :right
+  :right
+  :right
+  :left
+  :left
+  :right
+  :left
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :left
+  ...),
+ :shapes
+ ([8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  ...)}
+clj꞉years.2022.day17꞉> 
+(turn (turn state))
+{:lines (2 7 2 30 127),
+ :jets
+ (:left
+  :left
+  :right
+  :right
+  :left
+  :right
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :left
+  :right
+  :right
+  :left
+  :left
+  :right
+  :right
+  :right
+  :right
+  :right
+  :left
+  :left
+  :right
+  :left
+  :right
+  :right
+  :left
+  :left
+  :left
+  :right
+  :right
+  :left
+  :right
+  :right
+  :right
+  :left
+  :left
+  ...),
+ :shapes
+ ([1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  [1 1 28]
+  [16 16 16 16]
+  [48 48]
+  [30]
+  [8 28 8]
+  ...)}
+clj꞉years.2022.day17꞉> 
+(turn (turn (turn state)))
+; Execution error (NullPointerException) at years.2022.day17/turn (day17.clj:47).
+; Cannot invoke "Object.getClass()" because "x" is null
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+; Execution error (NullPointerException) at years.2022.day17/turn (day17.clj:47).
+; Cannot invoke "Object.getClass()" because "x" is null
+; Evaluation of file day17.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉years.2022.day17꞉> 
+(clojure.stacktrace/e)
+java.lang.NullPointerException: Cannot invoke "Object.getClass()" because "x" is null
+ at clojure.lang.Numbers.ops (Numbers.java:1095)
+    clojure.lang.Numbers.minus (Numbers.java:163)
+    clojure.lang.Numbers.minus (Numbers.java:3791)
+    years.2022.day17$turn.invokeStatic (day17.clj:47)
+    years.2022.day17$turn.invoke (day17.clj:42)
+    clojure.lang.Iterate.first (Iterate.java:47)
+    clojure.lang.Iterate.next (Iterate.java:54)
+    clojure.lang.RT.nthFrom (RT.java:924)
+nil
+clj꞉years.2022.day17꞉> 
+(clojure.stacktrace/print-stack-trace)
+; Execution error (ArityException) at years.2022.day17/eval9386 (REPL:1144).
+; Wrong number of args (0) passed to: clojure.stacktrace/print-stack-trace
+clj꞉years.2022.day17꞉> 
+(clojure.stacktrace/print-stack-trace *e*)
+; Syntax error compiling at (.calva/output-window/output.calva-repl:1148:1).
+; Unable to resolve symbol: *e* in this context
+clj꞉years.2022.day17꞉> 
+*err*
+#object[java.io.PrintWriter 0x26a1664f "java.io.PrintWriter@26a1664f"]
+clj꞉years.2022.day17꞉> 
+(clojure.stacktrace/print-stack-trace *err*)
+; Execution error (ClassCastException) at clojure.stacktrace/print-stack-trace (stacktrace.clj:50).
+; class java.io.PrintWriter cannot be cast to class java.lang.Throwable (java.io.PrintWriter and java.lang.Throwable are in module java.base of loader 'bootstrap')
+clj꞉years.2022.day17꞉> 
+(clojure.stacktrace/e)
+java.lang.ClassCastException: class java.io.PrintWriter cannot be cast to class java.lang.Throwable (java.io.PrintWriter and java.lang.Throwable are in module java.base of loader 'bootstrap')
+ at clojure.stacktrace$print_stack_trace.invokeStatic (stacktrace.clj:50)
+    clojure.stacktrace$print_stack_trace.invoke (stacktrace.clj:50)
+    clojure.stacktrace$print_stack_trace.invokeStatic (stacktrace.clj:55)
+    clojure.stacktrace$print_stack_trace.invoke (stacktrace.clj:50)
+    years.2022.day17$eval9389.invokeStatic (NO_SOURCE_FILE:1155)
+    years.2022.day17$eval9389.invoke (NO_SOURCE_FILE:1155)
+    clojure.lang.Compiler.eval (Compiler.java:7194)
+    clojure.lang.Compiler.eval (Compiler.java:7149)
+nil
+clj꞉years.2022.day17꞉> 
+; Jacking in...
+; Connecting using "deps.edn" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+; Starting Jack-in Terminal: pushd /Users/t.eichholz/git/aoc/aoc-clj ; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.0.0"},cider/cider-nrepl {:mvn/version,"0.28.5"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]" ; popd
+; nREPL Connection was closed
+; Using host:port localhost:65019 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; TIPS:
+;   - You can edit the contents here. Use it as a REPL if you like.
+;   - `alt+enter` evaluates the current top level form.
+;   - `ctrl+enter` evaluates the current form.
+;   - `alt+up` and `alt+down` traverse up and down the REPL command history
+;      when the cursor is after the last contents at the prompt
+;   - Clojure lines in stack traces are peekable and clickable.
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; Evaluating file: day17.clj
+; Syntax error compiling at (src/years/2022/day17.clj:1:1).
+; Found lib name 'debux.core' containing period with prefix 'quote'.  lib names inside prefix lists must not contain periods
+; Evaluation of file day17.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; Syntax error compiling at (src/years/2022/day17.clj:1:1).
+; Found lib name 'debux.core' containing period with prefix 'quote'.  lib names inside prefix lists must not contain periods
+; Evaluation of file day17.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; Syntax error compiling at (src/years/2022/day17.clj:1:1).
+; Found lib name 'debux.core' containing period with prefix 'quote'.  lib names inside prefix lists must not contain periods
+; Evaluation of file day17.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+ 
+{:ns years.2022.day17, :line 57}
+dbg: (+ 1 (+ 2 3)) =>
+|   6
+6
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+ 
+{:ns years.2022.day17, :line 57}
+dbg: (+ 1 (+ 2 3)) =>
+|   6
+6
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+ 
+{:ns years.2022.day17, :line 57}
+dbgn: (+ 1 (+ 2 3)) =>
+| (+ 2 3) =>
+|   5
+| (+ 1 (+ 2 3)) =>
+|   6
+6
+clj꞉years.2022.day17꞉> 
+; Evaluating file: util.clj
+; WARNING: read already refers to: #'clojure.core/read in namespace: util, being replaced by: #'util/read
+#'util/side-print
+clj꞉util꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+ 
+{:ns util, :line 27}
+dbgn: p =>
+| p =>
+|   (+ 1 2 (+ 3 4))
+10
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+ 
+{:ns util, :line 27}
+dbgn: p =>
+| p =>
+|   (+ 1 2 (+ 3 4))
+ 
+{:ns years.2022.day17, :line 58}
+dbgn: (+ 1 2 (+ 3 4)) =>
+| (+ 3 4) =>
+|   7
+| (+ 1 2 (+ 3 4)) =>
+|   10
+10
+clj꞉years.2022.day17꞉> 
+; Evaluating file: util.clj
+; Syntax error macroexpanding clojure.core/ns at (src/util.clj:1:1).
+; :refer-macros - failed: simple-symbol? at: [:ns-clauses :use :libs :libspec :lib] spec: :clojure.core.specs.alpha/use-libspec
+; :refer-macros - failed: (or (nil? %) (sequential? %)) at: [:ns-clauses :use :libs :libspec :lib+opts] spec: :clojure.core.specs.alpha/use-libspec
+; :refer-macros - failed: (or (nil? %) (sequential? %)) at: [:ns-clauses :use :libs :prefix-list] spec: :clojure.core.specs.alpha/use-prefix-list
+; :refer-macros - failed: #{:verbose :reload :reload-all} at: [:ns-clauses :use :libs :flag] spec: :clojure.core.specs.alpha/ns-use
+; :use - failed: #{:refer-clojure} at: [:ns-clauses :refer-clojure :clause] spec: :clojure.core.specs.alpha/ns-refer-clojure
+; :use - failed: #{:require} at: [:ns-clauses :require :clause] spec: :clojure.core.specs.alpha/ns-require
+; :use - failed: #{:import} at: [:ns-clauses :import :clause] spec: :clojure.core.specs.alpha/ns-import
+; :use - failed: #{:refer} at: [:ns-clauses :refer :clause] spec: :clojure.core.spe
+; cs.alpha/ns-refer
+; :use - failed: #{:load} at: [:ns-clauses :load :clause] spec: :clojure.core.specs.alpha/ns-load
+; :use - failed: #{:gen-class} at: [:ns-clauses :gen-class :clause] spec: :clojure.core.specs.alpha/ns-gen-class
+; Evaluation of file util.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉util꞉> 
+; Evaluating file: util.clj
+; WARNING: read already refers to: #'clojure.core/read in namespace: util, being replaced by: #'util/read
+#'util/side-print
+clj꞉util꞉> 
+; Evaluating file: util.clj
+; WARNING: read already refers to: #'clojure.core/read in namespace: util, being replaced by: #'util/read
+#'util/side-print
+clj꞉util꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+ 
+{:ns util, :line 27}
+dbgn: (eval p) =>
+| p =>
+|   (+ 1 2 (+ 3 4))
+| (eval p) =>
+|   10
+ 
+{:ns years.2022.day17, :line 58}
+dbgn: (+ 1 2 (+ 3 4)) =>
+| (+ 3 4) =>
+|   7
+| (+ 1 2 (+ 3 4)) =>
+|   10
+10
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+ 
+{:ns years.2022.day17, :line 57}
+dbgn: (+ 1 2 (+ 3 4)) =>
+| (+ 3 4) =>
+|   7
+| (+ 1 2 (+ 3 4)) =>
+|   10
+ 
+{:ns years.2022.day17, :line 58}
+dbgn: (+ 1 2 (+ 3 4)) =>
+| (+ 3 4) =>
+|   7
+| (+ 1 2 (+ 3 4)) =>
+|   10
+10
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+ 
+{:ns years.2022.day17, :line 48}
+dbgn: (concat (take-last (- (count shape) i) dropped-lines) (take i lines)) =>
+| shape =>
+|   (30)
+| (count shape) =>
+|   1
+| i =>
+|   0
+| (- (count shape) i) =>
+|   1
+| dropped-lines =>
+|   []
+| (take-last (- (count shape) i) dropped-lines) =>
+|   nil
+| lines =>
+|   (127)
+| (take i lines) =>
+|   ()
+| (concat (take-last (- (count shape) i) dropped-lines) (take i lines)) =>
+|   ()
+ 
+{:ns years.2022.day17, :line 48}
+dbgn: (concat (take-last (- (count shape) i) dropped-lines) (take i lines)) =>
+| shape =>
+|   (2 7 2)
+| (count shape) =>
+|   3
+| i =>
+|   0
+| (- (count shape) i) =>
+|   3
+| dropped-lines =>
+|   []
+| (take-last (- (count shape) i) dropped-lines) =>
+|   nil
+| lines =>
+|   (30 127)
+| (take i lines) =>
+|   ()
+| (concat (take-last (- (count shape) i) dropped-lines) (take i lines)) =>
+|   ()
+ 
+{:ns years.2022.day17, :line 48}
+dbgn: (concat (take-last (- (count shape) i) dropped-lines) (take i lines)) =>
+| shape =>
+|   (1 1 28)
+| (count shape) =>
+|   3
+| i =>
+|   nil
+; Execution error (NullPointerException) at years.2022.day17/turn$fn (day17.clj:47).
+; Cannot invoke "Object.getClass()" because "x" is null
+; Evaluation of file day17.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+; Execution error (NullPointerException) at years.2022.day17/collides?$fn (day17.clj:15).
+; Cannot invoke "Object.getClass()" because "x" is null
+; Evaluation of file day17.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+ 
+{:ns years.2022.day17, :line 52}
+dbgn: (maybe-push' shape (take-last (count shape) dropped-lines) jet) =>
+| shape =>
+|   (1 1 28)
+| (count shape) =>
+|   3
+| dropped-lines =>
+|   []
+| (take-last (count shape) dropped-lines) =>
+|   nil
+| jet =>
+|   :left
+; Execution error (NullPointerException) at years.2022.day17/collides?$fn (day17.clj:15).
+; Cannot invoke "Object.getClass()" because "x" is null
+; Evaluation of file day17.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉years.2022.day17꞉> (take-last 2 [])
+nil
+clj꞉years.2022.day17꞉> 
+(drdop 2 [])
+; Syntax error compiling at (.calva/output-window/output.calva-repl:1408:1).
+; Unable to resolve symbol: drdop in this context
+clj꞉years.2022.day17꞉> 
+(drop 2 [])
+()
+clj꞉years.2022.day17꞉> 
+(or (take-last 2 []) [])
+[]
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+#'years.2022.day17/part1
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+#'years.2022.day17/part1
+clj꞉years.2022.day17꞉> 
+part1
+6087
+clj꞉years.2022.day17꞉> 
+part1
+6087
+clj꞉years.2022.day17꞉> 
+(merge)
+; Execution error (ArityException) at years.2022.day17/eval11697 (REPL:1432).
+; Wrong number of args (0) passed to: years.2022.day17/merge
+clj꞉years.2022.day17꞉> 
+merge
+#function[years.2022.day17/merge]
+clj꞉years.2022.day17꞉> 
+(push-right 2r0000100)
+; Error printing return value (IllegalArgumentException) at clojure.lang.RT/seqFrom (RT.java:557).
+; Don't know how to create ISeq from: java.lang.Long
+clj꞉years.2022.day17꞉> 
+(push-right [2r0000100])
+(2)
+clj꞉years.2022.day17꞉> 
+(push-left [2r0000100])
+(8)
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+#'years.2022.day17/part1
+clj꞉years.2022.day17꞉> 
+part1
+9290
+clj꞉years.2022.day17꞉> 
+; Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+#'years.2022.day17/part1
+clj꞉years.2022.day17꞉> 
+part1
+4873
+clj꞉years.2022.day17꞉> 
+(right-border? [2r1000000])
+nil
+clj꞉years.2022.day17꞉> 
+(left-border? [2r1000000])
+true
+clj꞉years.2022.day17꞉> 
+true
+clj꞉years.2022.day17꞉> 
+(right-border? [2r0000001])
+true
+clj꞉years.2022.day17꞉> 
+(right-border? [2r0000000])
+nil
+clj꞉years.2022.day17꞉> 
+(right-border? [2r1000000])
+nil
+clj꞉years.2022.day17꞉> 
+(right-border? [2r1000000]); Evaluating file: day17.clj
+; WARNING: merge already refers to: #'clojure.core/merge in namespace: years.2022.day17, being replaced by: #'years.2022.day17/merge
+#'years.2022.day17/part1
+clj꞉years.2022.day17꞉> 
+(drop 2 '())
+()
+clj꞉years.2022.day17꞉> 
+(drop 2 [])
+()
+clj꞉years.2022.day17꞉> 
+part1
+5498
+clj꞉years.2022.day17꞉> 

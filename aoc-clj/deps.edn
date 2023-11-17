@@ -1,0 +1,10 @@
+{:deps
+ {clojure.java-time/clojure.java-time {:mvn/version "1.1.0"}
+  com.rpl/specter {:mvn/version "1.1.4"}
+  meander/epsilon {:mvn/version "0.0.650"}
+  instaparse/instaparse {:mvn/version "1.4.12"}
+  org.clojure/core.match {:mvn/version "1.0.1"}
+  ubergraph/ubergraph {:mvn/version "0.8.2"}
+  org.clojure/math.combinatorics {:mvn/version "0.1.6"}
+  philoskim/debux {:mvn/version "0.9.0"}
+}}
