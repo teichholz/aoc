@@ -1,4 +1,4 @@
-#!/Users/t.eichholz/git/aoc/aoc-py/venv/bin/python3
+#!/Users/t.eichholz/git/aoc/aoc-py/venv/bin/python3.11
 # -*- coding: utf-8 -*-
 import re
 import sys
