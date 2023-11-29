@@ -53,10 +53,15 @@ def solveforhumn():
         else:
             n = n2
             # we need to be smart here and be aware of non commutative operators like - and /
-            right = int(eval(f"({p1(n1)} {op} right)")) 
-                
+            if (iscommutative(op)):
+                right = int(eval(f"(right {inverse(op)} {p1(n1)})"))
+            else:
+                right = int(eval(f"({p1(n1)} {op} right)")) 
         
     return right
+
+def iscommutative(op: str):
+    return op in ['+', '*']
 
 def inverse(op: str):
     if (op == '+'): return '-'
