@@ -21,15 +21,15 @@ def p1(n: str = 'root'):
 print(p1())
 
 # part 2
-# n1, _, n2 = msd['root']
-# print(n1, n2) # n1 = n2 is what we want to solve for
-# print(p1(n1), p1(n2))
+n1, _, n2 = msd['root']
+print(n1, n2) # n1 = n2 is what we want to solve for
+print(p1(n1), p1(n2))
 
-# msd['humn'] = 3509819803065
+msd['humn'] = 3509819803065
 
-# n1, _, n2 = msd['root']
-# print(n1, n2) # n1 = n2 is what we want to solve for
-# print(p1(n1), p1(n2))
+n1, _, n2 = msd['root']
+print(n1, n2) # n1 = n2 is what we want to solve for
+print(p1(n1), p1(n2))
 
 def solveforhumn():
     """
