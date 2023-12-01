@@ -3,25 +3,26 @@ import re
 
 # Create a dictionary that maps string representation of numbers to their numeric values
 num_dict = {
-    'one': '1',
-    'two': '2',
-    'three': '3',
-    'four': '4',
-    'five': '5',
-    'six': '6',
-    'seven': '7',
-    'eight': '8',
-    'nine': '9'
+    'one': 'o1e',
+    'two': 't2o',
+    'three': 't3e',
+    'four': 'f4r',
+    'five': 'f5e',
+    'six': 's6x',
+    'seven': 's7n',
+    'eight': 'e8t',
+    'nine': 'n9e'
 }
 
-# Function to replace string representation with numeric value
 def replace(str):
-    if (str.isnumeric()): return str
-    return num_dict[str]
+    for i in range(3):
+        str = re.sub(r'one|two|three|four|five|six|seven|eight|nine', lambda m: num_dict[m.group()], str)
+    return str
 
-input = h.readdaylines(1, 2023)
-numsstr = [re.findall(r'one|two|three|four|five|six|seven|eight|nine|\d', line.lower()) for line in input]
-nums = [list(map(replace, num)) for num in numsstr]
+input = h.readday(1, 2023)
+# part 2, next line
+input = replace(input)
+nums = [re.findall(r'\d', line) for line in input.splitlines()]
 concat = [int(num[0] + num[-1]) for num in nums]
 sum = sum(concat)
 
