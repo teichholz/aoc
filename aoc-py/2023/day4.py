@@ -13,7 +13,7 @@ def parse(line: str):
 def score(game):
     our, winning = game
     goodNumbers = our & winning
-    if (len(goodNumbers) == 0):
+    if (not goodNumbers):
         return 0
     return 2 ** (len(goodNumbers) - 1)
 
@@ -23,11 +23,7 @@ part1 = int(sum(map(score, lines)))
 def part2():
     bonus = Counter({})
     for i, game in enumerate(lines, 1):
-        sco = len(game[0] & game[1])
-
-        inc = Counter({index:1 for index in after(i, sco) if index <= len(lines)})
-        if (sco > 0): # if we win
-            bonus += Counter({k:v*(bonus[i] + 1) for k, v in inc.items()})
+        bonus += Counter({k:(bonus[i] + 1) for k in after(i, len(game[0] & game[1])) if k <= len(lines)})
 
     return len(lines) + sum(bonus.values())
    
