@@ -1,10 +1,7 @@
 from helpers import compose, chunked
 import helpers as h
-import itertools
-import math
 
 input = h.readday(5, 2023).split("\n\n")
-
 seeds = [int(line) for line in input[0].split('seeds: ')[1].split()]
 mapss = [s.splitlines() for s in input[1:]]
 
