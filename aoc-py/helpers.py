@@ -1,23 +1,31 @@
 import os
 import functools
 
-def readday(day, year):
+def readday(day, year, example=False):
     home = os.environ["HOME"]
-    with open(f"{home}/git/aoc/aoc-py/input/{year}/{day}", "r") as f:
+    e = ".example" if example else ""
+    with open(f"{home}/git/aoc/aoc-py/input/{year}/{day}{e}", "r") as f:
         return f.read()
 
 def openday(day, year): 
     home = os.environ["HOME"]
     return open(f"{home}/git/aoc/aoc-py/input/{year}/{day}", "r")
 
-def readdaylines(day, year):
-    return readday(day, year).splitlines()
+def readdaylines(day, year, example=False):
+    return readday(day, year, example).splitlines()
 
 def flatmap(f, xs):
     return [y for ys in xs for y in f(ys)]
 
+def cycle(l):
+    while True:
+        yield from l
+        
+def reverse(f):
+    return lambda *x: f(*reversed(x))
+
 def compose(*functions):
-    return functools.reduce(lambda acc, g: lambda x: acc(g(x)), functions, lambda x: x)
+    return functools.reduce(lambda acc, g: lambda *x: acc(g(*x)), functions, lambda x: x)
 
 def chunked(lst, n):
     if (isinstance(lst, map)):

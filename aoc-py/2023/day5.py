@@ -24,7 +24,6 @@ def part2():
     for m in map(parsemap, mapss):
         s = flatmap(partial(mapseedrange, m), s)
     return min(seed.start for seed in s)
-    
 
 def mapseedrange(map, seedr):
     for ro, rd in map:
