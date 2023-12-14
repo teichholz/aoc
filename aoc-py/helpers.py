@@ -16,6 +16,9 @@ def openday(day, year):
 def readdaylines(day, year, example=False):
     return readday(day, year, example).splitlines()
 
+def transpose(xs):
+    return [list(row) for row in zip(*xs)]
+
 def flatmap(f, xs):
     return [y for ys in xs for y in f(ys)]
 
@@ -34,3 +37,9 @@ def chunked(lst, n):
         lst = list(lst)
     for i in range(0, len(lst), n):
         yield lst[i:i + n]
+        
+def manhatten(a, b):
+    return abs(a[0] - b[0]) + abs(a[1] - b[1])
+
+def sign(a, b):
+    return 1 if a > b else -1 if a < b else 0
