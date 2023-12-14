@@ -19,18 +19,15 @@ S = (74, 18) # row, col
 def part1():
     ps = [[pipes.get(c, [0, 0]) for c in line] for line in input] 
     ps[S[0]][S[1]] = pipes.get(start(ps))
-    dists = { 
-        S: 0
-    }
-    dist = 0
+    dists = { S: 0 }
     cur = S
     f = 0
     while (True):
-        dists[cur] = dist
+        prev_dist = dists[cur]
         row, col = cur
         f, *_ = [i for i in ps[row][col] if i != -f]
         cur = (row + int(f.imag), col + int(f.real))
-        dist += 1
+        dists[cur] = prev_dist + 1
         if (cur == S):
             break
 
@@ -38,14 +35,13 @@ def part1():
         for x in range(W):
             if ((y, x) not in dists):
                 input[y][x] = '.'
-            print(input[y][x], end='')
-        print()
     
-    
-        
-    return (dists[(73, 18)] + dists[(74, 19)]) / 2
+    return (max(dists.values()) + 1) / 2
 
 def part2():
+    """
+    good ol point in polygon test
+    """
     count = 0
     for y in range(H):
         for x in range(W):
@@ -67,6 +63,9 @@ def part2():
     return count
 
 def start(ps) -> str:
+    """
+    could be a lot nicer
+    """
     row, col = S
     for pipe, v in pipes.items():
         conn = 0
