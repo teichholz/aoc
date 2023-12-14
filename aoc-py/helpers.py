@@ -1,6 +1,8 @@
 import os
 import functools
 
+dirs = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+
 def readday(day, year, example=False):
     home = os.environ["HOME"]
     e = ".example" if example else ""
