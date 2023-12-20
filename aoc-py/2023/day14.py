@@ -2,23 +2,23 @@ from helpers import readdaylines, transpose
 
 input = readdaylines(14, 2023, example=False)
 
-def tilt(line, dir=1):
+def tilt(line, scandir=1):
     W = len(line)
-    m = -1 if dir == 1 else W
-    inds = range(W) if dir == 1 else range(W-1, -1, -1) 
+    boundary = -1 if scandir == 1 else W
+    inds = range(W) if scandir == 1 else range(W-1, -1, -1) 
     for i in inds:
         if line[i] == '#':
-            m = i
+            boundary = i
         if line[i] == 'O':
-            m = m+dir
-            line[m], line[i] = line[i], line[m]
+            boundary = boundary+scandir
+            line[boundary], line[i] = line[i], line[boundary]
     return line
 
 def tiltall(grid):
     """
     nort -> west -> south -> east
     """
-    southtilt = lambda l: tilt(l, dir=-1)
+    southtilt = lambda l: tilt(l, scandir=-1)
     north = map(tilt, transpose(grid))
     west = map(tilt, transpose(north))
     south = map(southtilt, transpose(west))
