@@ -1,4 +1,5 @@
 from helpers import readdaylines
+from collections import defaultdict
 
 input = readdaylines(15, 2023, example=False)[0].split(',')
 
@@ -17,7 +18,7 @@ def part2():
     """
     Python 3.7 preserves the insertion order of dictionaries so they can act like a list of tuples with O(1) access + mutation and cheap appending
     """
-    boxes = {}
+    boxes = defaultdict(dict)
     for lens in input:
         if ('-' in lens):
             label, *_ = lens.split('-')
@@ -28,12 +29,7 @@ def part2():
             label, focall = lens.split('=')
             focall = int(focall)
             box = HASH(label)
-            if (box in boxes):
-                # add label to end
-                boxes[box][label] = focall
-            else:
-                # create hashmap if box does not exist
-                boxes[box] = {label: focall}
+            boxes[box][label] = focall
     power = 0
     for (boxnum, box) in boxes.items():
         boxnum += 1
