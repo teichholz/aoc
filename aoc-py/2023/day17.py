@@ -1,7 +1,7 @@
 from helpers import readdaylines
 import heapq
 
-lines = readdaylines(17, 2023, example=False)
+lines = readdaylines(17, 2023, example=True)
 W = len(lines[0])
 H = len(lines)
 input = {(row,col):int(char) for row, line in enumerate(lines) for col, char in enumerate(line)}
@@ -17,7 +17,7 @@ def dik(grid=input):
         d, cur, cdir, n = heapq.heappop(q)
 
         if cur == (W-1, H-1) and n >= 3:
-            return d
+            return d, n
         
         if (cur, cdir, n) in seen: continue
         seen.add((cur, cdir, n))
