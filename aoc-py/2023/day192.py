@@ -21,7 +21,7 @@ def parseflow(flow):
 flows = [ls.splitlines() for ls in readday(19, 2023, example=False).split('\n\n')][0]
 flows = {k:v for k, v in map(parseflow, flows)}
 
-bs = { 'x': (1, 4000), 'm': (1, 4000), 'a': (1, 4000), 's': (1, 4000) }
+bs = {c: (1, 4000) for c in 'xmas'}
 setmax = lambda bs, k, v: {**bs, k: (bs[k][0], v)}
 setmin = lambda bs, k, v: {**bs, k: (v, bs[k][1])}
 
