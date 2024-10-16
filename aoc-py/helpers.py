@@ -9,7 +9,7 @@ def readday(day, year, example=False):
     with open(f"{home}/git/aoc/aoc-py/input/{year}/{day}{e}", "r") as f:
         return f.read()
 
-def openday(day, year): 
+def openday(day, year):
     home = os.environ["HOME"]
     return open(f"{home}/git/aoc/aoc-py/input/{year}/{day}", "r")
 
@@ -25,7 +25,7 @@ def flatmap(f, xs):
 def cycle(l):
     while True:
         yield from l
-        
+
 def reverse(f):
     return lambda *x: f(*reversed(x))
 
@@ -37,7 +37,7 @@ def chunked(lst, n):
         lst = list(lst)
     for i in range(0, len(lst), n):
         yield lst[i:i + n]
-        
+
 def manhatten(a, b):
     return abs(a[0] - b[0]) + abs(a[1] - b[1])
 
