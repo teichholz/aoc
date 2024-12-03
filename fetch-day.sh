@@ -26,17 +26,17 @@ else
 fi
 
 fetch-day () {
-    YEAR=$1
-    DAY=$2
+    local y=$1
+    local d=$2
 
-    FILE="$DIR/$DAY"
-    URL="https://adventofcode.com/$YEAR/day/$DAY/input"
+    local file="$DIR/$d"
+    local url="https://adventofcode.com/$y/day/$d/input"
 
-    http --output "$FILE" "$URL" Cookie:session="$AOCSESSION"
+    http --output "$file" "$url" Cookie:session="$AOCSESSION"
     if [[ $? ]] ; then
-        echo "Fetched Year $YEAR Day $DAY"
+        echo "Fetched Year $y Day $d"
     else
-        echo "Failed to fetch Year $YEAR Day $DAY"
+        echo "Failed to fetch Year $y Day $d"
     fi
 }
 
