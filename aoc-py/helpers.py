@@ -2,6 +2,8 @@ import os
 import functools
 
 dirs = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+dirs4 = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+dirs8 = [(-1, 0), (1, 0), (0, -1), (0, 1), (-1, -1), (-1, 1), (1, -1), (1, 1)]
 
 def readday(day, year, example=False):
     home = os.environ["HOME"]

@@ -2,7 +2,6 @@ import helpers as h
 import re
 from dataclasses import dataclass
 
-# num pairs between 10000 and 99999
 input = h.readday(3, 2024, example=False)
 
 class Instr:

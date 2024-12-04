@@ -1,6 +1,5 @@
 import helpers as h
 
-# num pairs between 10000 and 99999
 input = h.readdaylines(2, 2024, example=False)
 
 
