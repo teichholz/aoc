@@ -12,27 +12,24 @@ def parse() -> list[tuple[int, list[int]]]:
     return out
 
 def part1():
-    ops = [add, mul]
-    return solve(ops)
+    return solve([add, mul])
 
 def part2():
-    ops = [add, mul, lambda x, y: int(str(x) + str(y))]
-    return solve(ops)
+    return solve([add, mul, lambda x, y: int(str(x) + str(y))])
 
-def solve(ops) -> int:
-    sol = 0
-    for equation in parse():
-        eq, nums = equation
+def solve(ops):
+    total = 0
+    for eq, nums in parse():
+        results = [nums[0]]
 
-        res, *rest = nums
-        result = [res]
-        for num in rest:
-            new_result = []
-            for op in ops:
-                for res in result:
-                    new_result.append(op(res, num))
-            result = new_result
+        for num in nums[1:]:
+            results = [
+                op(res, num)
+                for res in results
+                for op in ops
+                if res <= eq
+            ]
 
-        sol += eq * any(eq == num for num in result)
+        total += eq * any(eq == res for res in results)
 
-    return sol
+    return total
