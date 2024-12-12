@@ -89,6 +89,3 @@ def size(start, end):
 
 def checksum(files):
     return sum(index * id if id >= 0 else 0 for index, id in enumerate(files))
-
-def flatten(files):
-    return [id for id, size in files for _ in range(size)]
