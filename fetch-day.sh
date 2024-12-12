@@ -32,7 +32,7 @@ fetch-day () {
     local file="$DIR/$d"
     local url="https://adventofcode.com/$y/day/$d/input"
 
-    http --output "$file" "$url" Cookie:session="$AOCSESSION"
+    curl -o "$file" -H "Cookie: session=$AOCSESSION" "$url"
     if [[ $? ]] ; then
         echo "Fetched Year $y Day $d"
     else
