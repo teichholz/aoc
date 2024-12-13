@@ -3,7 +3,10 @@ import functools
 
 dirs = [(-1, 0), (1, 0), (0, -1), (0, 1)]
 dirs4 = [(-1, 0), (1, 0), (0, -1), (0, 1)]
-dirs8 = [(-1, 0), (1, 0), (0, -1), (0, 1), (-1, -1), (-1, 1), (1, -1), (1, 1)]
+dirs8 = [(1, 0), (1, 1), (0, 1), (-1, 1), (-1, 0), (-1, -1), (0, -1), (1, -1)]
+
+def is_diag(dir):
+    return dir[0] * dir[1] != 0
 
 def readday(day, year, example=False):
     home = os.environ["HOME"]
