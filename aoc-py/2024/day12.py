@@ -1,7 +1,7 @@
-from helpers import readdaylines, dirs4, dirs8, is_diag
-from collections import defaultdict, Counter
+from helpers import readdaylines, dirs4
+from collections import defaultdict
 
-lines = readdaylines(12, 2024, example=True)
+lines = readdaylines(12, 2024, example=False)
 W, H = len(lines[0]), len(lines)
 
 def parse() -> list[list[str]]:
@@ -31,64 +31,79 @@ def part2():
     groups = group_cells(parse())
 
     s = 0
-    for letter, positions in groups.items():
-        print(f"DEBUGPRINT[18]: day12.py:34: letter={letter}")
+    for _, positions in groups.items():
         area = len(positions)
-        perimeter = list()
+        perimeter = set()
         for col, row in positions:
+            pos = col, row
             for dcol, drow in dirs4:
                 boundary = col + dcol, row + drow
                 if boundary not in positions:
-                    # boundaries will be added multiple times when we have concave corners (inner corners)
-                    perimeter.append(boundary)
+                    perimeter.add((pos, boundary))
 
-        print(f"DEBUGPRINT[20]: day12.py:37: perimeter={perimeter}")
-        count = Counter(perimeter)
-        print(f"DEBUGPRINT[22]: day12.py:46: count={count}")
+        def extract(perimeter, hor=True) -> set[tuple[tuple[int, int], tuple[int, int]]]:
+            """
+            Extracts horizontal or vertical edges
+            """
+            edges = set()
+            for fr, to in perimeter:
+                if hor and abs(fr[0] - to[0]) == 1:
+                    edges.add((fr, to))
+                if not hor and abs(fr[1] - to[1]) == 1:
+                    edges.add((fr, to))
 
-        def find(start) -> int:
-            cur = start
-            last_dir = (0, 0)
-            turns = 0
+            return edges
 
-            while True:
-                for dx, dy in dirs8:
-                    if (dx, dy) == last_dir:
-                        continue
+        def connect_edges(cur, dirs, perimeter, seen=set()) -> set[tuple[tuple[int, int], tuple[int, int]]]:
+            """
+            Tries to connect loose edges, building one continuous edge
+            """
+            fr, to = cur
 
-                    neighbor = (col + dx, row + dy)
-                    if neighbor in perimeter:
-                        turns += is_diag((dx, dy)) * count[cur]
-                        cur = neighbor
+            if cur in seen:
+                return set()
 
-                if cur == start:
-                    break
+            seen.add(cur)
+            positions = set([cur])
 
-            return turns
+            for drow, dcol in dirs:
+                from_row, from_col = fr
+                to_row, to_col = to
+                neighbor = ((from_row + drow, from_col + dcol), (to_row + drow, to_col + dcol))
+                if neighbor in perimeter:
+                    positions |= connect_edges(neighbor, dirs, perimeter, seen)
 
-        # unsolved
-        sides = find(perimeter[0])
-        print(f"DEBUGPRINT[19]: day12.py:66: sides={sides}")
-        s += area * sides
+            return positions
+
+        # extract all the horizontal edges in the perimeter and try connect them, if they are continuous
+        hor_edges = extract(perimeter, True)
+        continuous_hor_edges = list()
+        while len(hor_edges) > 0:
+            continuous = connect_edges(hor_edges.pop(), [(0, 1), (0, -1)], hor_edges, set())
+            hor_edges -= continuous
+            continuous_hor_edges.append(continuous)
+
+        # any rectilinear polygon has the same amount of vertical and horizontal edges
+        s += area * len(continuous_hor_edges) * 2
 
     return s
 
 def group_cells(grid) -> dict[str, set[tuple[int, int]]]:
-    def dfs(col, row, letter) -> set[tuple[int, int]]:
+    def dfs(row, col, letter) -> set[tuple[int, int]]:
         if not (0 <= row < H) or not (0 <= col < W):
             return set()
 
-        if (col, row) in seen:
+        if (row, col) in seen:
             return set()
 
-        if grid[col][row] != letter:
+        if grid[row][col] != letter:
             return set()
 
-        seen.add((col, row))
-        positions = set([(col, row)])
+        seen.add((row, col))
+        positions = set([(row, col)])
 
-        for dx, dy in dirs4:
-            positions |= dfs(col + dx, row + dy, letter)
+        for dcol, drow in dirs4:
+            positions |= dfs(row + drow, col + dcol, letter)
 
         return positions
 
