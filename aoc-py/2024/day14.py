@@ -46,6 +46,9 @@ def part1():
     return safe_factor
 
 def part2():
+    """
+    I won't do this. Maybe just check if no robots overlap.
+    """
     seconds = 100
     robots = parse()
 
