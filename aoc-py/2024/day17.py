@@ -14,8 +14,10 @@ class Machine:
     jumped: bool = False
 
     def exe(self):
+        self.out = []
         while self.instr < len(self.prog):
             self.prog[self.instr].exe(self)
+            print(self)
             if self.jumped:
                 self.jumped = False
             else:
@@ -54,7 +56,7 @@ class BXL(OP):
 
 class BST(OP):
     def exe(self, mach: Machine):
-        mach.regs["B"] = self.combo(mach.regs) % 8
+        mach.regs["B"] = self.combo(mach.regs) & 7
 
 class JNZ(OP):
     def exe(self, mach: Machine):
@@ -70,7 +72,7 @@ class BXC(OP):
 
 class OUT(OP):
     def exe(self, mach: Machine):
-        mach.out += [self.combo(mach.regs) % 8]
+        mach.out += [self.combo(mach.regs) & 7]
 
 class BDV(OP):
     def exe(self, mach: Machine):
@@ -97,9 +99,9 @@ def part1():
     instrs = [op(operand) for op, operand in zip(map(op, opcodes), operands)]
     machine = Machine(dict(regs), instrs, [], 0)
     print(machine)
-    machine.exe()
+    # machine.exe()
 
-    return ",".join(map(str, machine.out))
+    # return ",".join(map(str, machine.out))
 
 def op(opcode: int):
     mapping = {0: ADV, 1: BXL, 2: BST, 3: JNZ, 4: BXC, 5: OUT, 6: BDV, 7: CDV}
