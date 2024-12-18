@@ -1,4 +1,4 @@
-from helpers import readday
+from helpers import readday, profiler
 from dataclasses import dataclass
 import re
 import signal
@@ -90,6 +90,7 @@ def parse():
     return {"A": a, "B": b, "C": c}, prog
 
 
+@profiler
 def part1():
     regs, prog = parse()
     opcodes = prog[::2]
@@ -105,6 +106,7 @@ def op(opcode: int):
     mapping = {0: ADV, 1: BXL, 2: BST, 3: JNZ, 4: BXC, 5: OUT, 6: BDV, 7: CDV}
     return mapping[opcode]
 
+@profiler
 def part2():
     """
     Considering the Machine:
@@ -114,14 +116,12 @@ def part2():
             instr=0,
             jumped=False)
     Opcode effects:[B=A&7, B=B^1, C=A//2**B, B=B^5, B=B^C, out+=[B&7],A=A//8, jump start A!=0]
-    inlined effects: [B=(((A&7)^1)^5)^(A//2**((A&7)^1), out+=[B&7],A=A//8, jump start A!=0]
     We need: 2,4,1,1,7,5,1,5,4,0,5,5,0,3,3,0  len=16
     We can make the following observations:
     - We must end in A=0, so that we do not jump with JNZ
     - OUT will be called len(out) times and so B (combo operand 5) must contain the value 'whatever & opcode' or 'whatever % 8 = opcode'
     - B and C will be overwritten in the second and third step, so their value in each iteration solely depends on the value of A
     - In order to output 16 times we need to repeat 15 times, A must be dividable by 8 15 times. That is A >= 8 ** 15
-    - Dividing by multiples of 2 is the same as >>
 
     I first tried brute forcing with the brute function, but the search area 8 ** 15 <= A < 8 ** 16 is way too big.
     Then i tried calculating the the result in reverse, which drastically shrinks the search space, since at every point we only need to consider 8 values for A and we can instantly check whether they work or not.
@@ -142,6 +142,7 @@ def search(out=[2, 4, 1, 1, 7, 5, 1, 5, 4, 0, 5, 5, 0, 3, 3, 0], A=0):
     for a in range(8):
         A_ = A + a
 
+        # we could optionally just run the (variable) program here and see if the ouput is correct
         B = A_ & 7
         B_1 = B ^ 1
         C = A_ // 2**B_1
