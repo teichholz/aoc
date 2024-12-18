@@ -115,20 +115,46 @@ def part2():
             jumped=False)
     Opcode effects:[B=A&7, B=B^1, C=A//2**B, B=B^5, B=B^C, out+=[B&7],A=A//8, jump start A!=0]
     inlined effects: [B=(((A&7)^1)^5)^(A//2**((A&7)^1), out+=[B&7],A=A//8, jump start A!=0]
-    1=b0000'0001
-    5=b0000'0101
-    7=b0000'0111
     We need: 2,4,1,1,7,5,1,5,4,0,5,5,0,3,3,0  len=16
     We can make the following observations:
-    - A must start with the lowest possible value
     - We must end in A=0, so that we do not jump with JNZ
     - OUT will be called len(out) times and so B (combo operand 5) must contain the value 'whatever & opcode' or 'whatever % 8 = opcode'
-    - the longest path from start to end is len(opcodes) * len(out). Every iteration outputs the corresponding opcode / operand of the program.
     - B and C will be overwritten in the second and third step, so their value in each iteration solely depends on the value of A
     - In order to output 16 times we need to repeat 15 times, A must be dividable by 8 15 times. That is A >= 8 ** 15
     - Dividing by multiples of 2 is the same as >>
+
+    I first tried brute forcing with the brute function, but the search area 8 ** 15 <= A < 8 ** 16 is way too big.
+    Then i tried calculating the the result in reverse, which drastically shrinks the search space, since at every point we only need to consider 8 values for A and we can instantly check whether they work or not.
     """
-    pass
+    return search()
+
+def search(out=[2, 4, 1, 1, 7, 5, 1, 5, 4, 0, 5, 5, 0, 3, 3, 0], A=0):
+    """
+    Search in reverse:
+    - start state is: out = [2,4,1,1,7,5,1,5,4,0,5,5,0,3,3,0], A=0
+    - end state ist: out = [], min(8 ** 15 <= A < 8 ** 16)
+    """
+    if out == []:
+        return A
+
+    # A+t=A//8, A = A+T*8+[0, 7]
+    A *= 8
+    for a in range(8):
+        A_ = A + a
+
+        B = A_ & 7
+        B_1 = B ^ 1
+        C = A_ // 2**B_1
+        B_2 = B_1 ^ 5
+        B_3 = B_2 ^ C
+
+        if B_3 & 7 == out[-1]:
+            found = search(out[:-1], A_)
+            # there might be solutions which later turn out to be wrong, so we check that here
+            if found != -1:
+                return found
+
+    return -1
 
 def generate_output(A, target):
     inc = 0
@@ -157,7 +183,7 @@ def generate_output(A, target):
 target_output = [2, 4, 1, 1, 7, 5, 1, 5, 4, 0, 5, 5, 0, 3, 3, 0]
 
 A = 35188651556392
-def find_A_for_output(target_output):
+def brute(target_output):
     # 8 ** 15 <= A < 8 ** 16
     global A
     while True:
