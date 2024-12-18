@@ -1,7 +1,6 @@
 from helpers import readdaylines
 from collections import deque
 
-
 lines = readdaylines(18, 2024, example=False)
 lines2 = list(map(lambda row: tuple(map(int, row.split(","))), lines))[1024:]
 lines = list(map(lambda row: tuple(map(int, row.split(","))), lines))[:1024]
