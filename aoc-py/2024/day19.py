@@ -1,4 +1,5 @@
 from helpers import readday
+from functools import cache
 
 input = readday(19, 2024, example=False).strip()
 
@@ -31,8 +32,7 @@ def part1():
 def part2():
     sum = 0
     for pattern in patterns:
-        print(f"DEBUGPRINT[18]: day19.py:33: pattern={pattern}")
-        sum += search_num(pattern, towels, lo, hi)
+        sum += search_num(pattern, lo, hi)
 
     return sum
 
@@ -51,8 +51,10 @@ def search(pat, towels, lo=lo, hi=hi):
 
     return False
 
-def search_num(pat, towels, lo=lo, hi=hi) -> int:
-    if len(pat) == 0:
+
+@cache
+def search_num(pat, lo=lo, hi=hi) -> int:
+    if len(pat) <= 0:
         return 1
 
     hi_ = min(hi, len(pat))
@@ -60,6 +62,6 @@ def search_num(pat, towels, lo=lo, hi=hi) -> int:
     for pre in range(lo, hi_ + 1):
         prefix = pat[:pre]
         if prefix in towels:
-            found += search_num(pat[pre:], towels)
+            found += search_num(pat[pre:])
 
     return found
