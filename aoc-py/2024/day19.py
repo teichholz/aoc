@@ -65,3 +65,12 @@ def search_num(pat, lo=lo, hi=hi) -> int:
             found += search_num(pat[pre:])
 
     return found
+
+def count(pat, towels, lo=lo, hi=hi):
+    dp = [0] * (len(pat) + 1)
+    dp[0] = 1
+    for i in range(1, len(pat) + 1):
+        for plen in range(lo, hi + 1):
+            if i >= plen and pat[i - plen:i] in towels:
+                dp[i] += dp[i - plen]
+    return dp[len(pat)]
