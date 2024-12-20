@@ -1,9 +1,16 @@
-from helpers import readdaylines
+from helpers import readdaylines, manhatten
 from collections import deque
 
 lines = readdaylines(20, 2024, example=False)
 grid = {(row, col): char for row, line in enumerate(lines) for col, char in enumerate(line) if char == "#"}
 W, H = len(lines[0]), len(lines)
+start, end = None, None
+for row, line in enumerate(lines):
+    for col, char in enumerate(line):
+        if char == "S":
+            start = (row, col)
+        if char == "E":
+            end = (row, col)
 
 def part1():
     sum = 0
@@ -20,7 +27,34 @@ def part1():
     return sum
 
 def part2():
-    pass
+    max_cheat_len = 20
+    min_saved = 100
+    path = bfs(grid, start, end)
+    cost = dict()
+    tmp = list(path)
+    while len(tmp) > 0:
+        cost[tmp[0]] = len(tmp) - 1
+        tmp = tmp[1:]
+
+    sum = 0
+    for ch_start in path:
+        for ch_end in path:
+            # the shortest distance (cheat distance) is the manhatten distance
+            cheat_len = manhatten(ch_start, ch_end)
+            # is our cheat in the allowed time frame
+            if cheat_len <= max_cheat_len:
+                # is the end of the path closer to the goal
+                if cost[ch_end] < cost[ch_start]:
+                    # cosider the length it would normally take
+                    normal_len = cost[ch_start] - cost[ch_end]
+                    # does the cheat save time
+                    if cheat_len < normal_len:
+                        # the amount of time the cheat saved us
+                        saved = normal_len - cheat_len
+                        if saved >= min_saved:
+                            sum += 1
+
+    return sum
 
 def bfs(grid, start, goal):
     directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
