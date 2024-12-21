@@ -63,5 +63,12 @@ def chunked(lst, n):
 def manhatten(a, b):
     return abs(a[0] - b[0]) + abs(a[1] - b[1])
 
-def sign(a, b):
-    return 1 if a > b else -1 if a < b else 0
+def sign(*args):
+    if len(args) == 1:
+        a = args[0]
+        return 1 if a > 0 else -1 if a < 0 else 0
+    if len(args) == 2:
+        a, b, *_ = args
+        return 1 if a > b else -1 if a < b else 0
+
+    raise Exception("Can't handle args")

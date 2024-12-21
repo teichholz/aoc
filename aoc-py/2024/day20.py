@@ -37,22 +37,18 @@ def part2():
         tmp = tmp[1:]
 
     sum = 0
-    for ch_start in path:
-        for ch_end in path:
+    for i, ch_start in enumerate(path):
+        for ch_end in path[i + min_saved:]:
             # the shortest distance (cheat distance) is the manhatten distance
             cheat_len = manhatten(ch_start, ch_end)
             # is our cheat in the allowed time frame
             if cheat_len <= max_cheat_len:
-                # is the end of the path closer to the goal
-                if cost[ch_end] < cost[ch_start]:
-                    # cosider the length it would normally take
-                    normal_len = cost[ch_start] - cost[ch_end]
-                    # does the cheat save time
-                    if cheat_len < normal_len:
-                        # the amount of time the cheat saved us
-                        saved = normal_len - cheat_len
-                        if saved >= min_saved:
-                            sum += 1
+                # cosider the length it would normally take
+                normal_len = cost[ch_start] - cost[ch_end]
+                # the amount of time the cheat saved us
+                saved = normal_len - cheat_len
+                if saved >= min_saved:
+                    sum += 1
 
     return sum
 
