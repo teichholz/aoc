@@ -17,12 +17,8 @@ def cliques(graph, size=3):
 
 @profiler
 def part1():
-    sum = 0
-    for clique in cliques(graph, size=250):
-        if any(v.startswith("t") for v in clique):
-            sum += 1
-
-    return sum
+    return sum(any(v.startswith("t") for v in clique)
+               for clique in cliques(graph, size=3))
 
 @profiler
 def part2():
