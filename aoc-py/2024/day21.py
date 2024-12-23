@@ -23,8 +23,13 @@ def path(start, end):
     hor = ("<" * -dcol) + (">" * dcol)
 
     ill = pad[" "] - pad[start]
-    prefer_yy_first = (dcol > 0 or ill == dcol) and ill != drow * 1j
-    return (ver + hor if prefer_yy_first else hor + ver) + "A"
+
+    # ill == drow * 1j end is in the row of ill
+    # ill != drow * 1j end is not in the row of ill
+    # dcol > 0         path goes to the right
+    # ill == dcol      end is in the column of ill
+    prefer_ver_first = (dcol > 0 or ill == dcol) and ill != drow * 1j
+    return (ver + hor if prefer_ver_first else hor + ver) + "A"
 
 @cache
 def length(code, depth):
