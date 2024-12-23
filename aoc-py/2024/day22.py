@@ -47,15 +47,12 @@ def part2():
         for i, price in enumerate(prices[1:], 1):
             changes.append(price - prices[i - 1])
 
-        first_change_price = dict()
+        seen = set()
         for i in range(len(changes) - 3):
             seq = changes[i:i + 4]
             price = prices[i + 3 + 1]
             combined = tuple(seq)
-            if combined not in first_change_price:
-                first_change_price[combined] = price
-
-        for combined, price in first_change_price.items():
-            most_global[combined] += price
+            if combined not in seen:
+                most_global[combined] += price
 
     return max(most_global.values()), most_global
