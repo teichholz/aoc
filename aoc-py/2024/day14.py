@@ -56,9 +56,6 @@ def part1():
 
 
 def part2():
-    """
-    I won't do this. Maybe just check if no robots overlap.
-    """
     robots = parse()
 
     return min(
