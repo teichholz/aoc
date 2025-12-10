@@ -1,7 +1,0 @@
-lark
-toolz
-numpy
-sympy
-networkx
-matplotlib
-z3-solver

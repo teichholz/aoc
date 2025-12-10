@@ -2,6 +2,7 @@ import functools
 import os
 from time import perf_counter_ns
 from typing import Any, Callable, Final, Generator, Iterable, Literal, TextIO, TypeVar, overload
+from typing import Optional
 
 T = TypeVar("T")
 U = TypeVar("U")
@@ -62,9 +63,9 @@ def flatmap(f: Callable[[U], list[V]], xs: list[U]) -> list[V]:
     return [y for ys in xs for y in f(ys)]
 
 
-def cycle(l: Iterable[T]) -> Generator[T, None, None]:
+def cycle(iter: Iterable[T]) -> Generator[T, None, None]:
     while True:
-        yield from l
+        yield from iter
 
 
 def reverse(f: Callable[..., T]) -> Callable[..., T]:
@@ -90,16 +91,16 @@ def chunked(lst: Iterable[T], n: int) -> Generator[list[T], None, None]:
         yield lst[i : i + n]
 
 
-def manhatten(a: tuple[int, int], b: tuple[int, int]) -> int:
-    return abs(a[0] - b[0]) + abs(a[1] - b[1])
+def manhatten(a: tuple[int, ...], b: tuple[int, ...]) -> int:
+    return sum(abs(x - y) for x, y in zip(a, b))
 
 
-def add(a: tuple[int, int], b: tuple[int, int]) -> tuple[int, int]:
-    return a[0] + b[0], a[1] + b[1]
+def add(a: tuple[int, ...], b: tuple[int, ...]) -> tuple[int, ...]:
+    return tuple(x + y for x, y in zip(a, b))
 
 
-def sub(a: tuple[int, int], b: tuple[int, int]) -> tuple[int, int]:
-    return a[0] + b[0], a[1] + b[1]
+def sub(a: tuple[int, ...], b: tuple[int, ...]) -> tuple[int, ...]:
+    return tuple(x - y for x, y in zip(a, b))
 
 
 def times(a: tuple[int, int], s: int) -> tuple[int, int]:
@@ -119,3 +120,96 @@ def sign(*args: int | float) -> Literal[-1, 0, 1]:
         return 1 if a > b else -1 if a < b else 0
 
     raise Exception("Can't handle args")
+
+def visualize_points(points: list[tuple[int, int]],
+                     markers: Optional[list[str]] = None,
+                     empty_char: str = '.',
+                     padding: int = 2,
+                     show_axes: bool = True,
+                     min_x: Optional[int] = None,
+                     max_x: Optional[int] = None,
+                     min_y: Optional[int] = None,
+                     max_y: Optional[int] = None):
+    """
+    Visualize points on a grid.
+
+    Args:
+        points: List of (x, y) coordinates to display
+        markers: Optional list of characters to use for each point.
+                 If None, uses '1', '2', '3', ... for each point.
+                 If a point appears multiple times, uses the first marker.
+        empty_char: Character to use for empty cells
+        padding: Number of cells to add around the bounding box
+        show_axes: Whether to show axis labels
+        min_x: Optional minimum x coordinate (overrides automatic calculation)
+        max_x: Optional maximum x coordinate (overrides automatic calculation)
+        min_y: Optional minimum y coordinate (overrides automatic calculation)
+        max_y: Optional maximum y coordinate (overrides automatic calculation)
+    """
+    if not points and (min_x is None or max_x is None or min_y is None or max_y is None):
+        print("No points to visualize")
+        return
+
+    # Find bounding box (or use provided values)
+    if min_x is None:
+        min_x = min(p[0] for p in points) if points else 0
+    if max_x is None:
+        max_x = max(p[0] for p in points) if points else 0
+    if min_y is None:
+        min_y = min(p[1] for p in points) if points else 0
+    if max_y is None:
+        max_y = max(p[1] for p in points) if points else 0
+
+    # Add padding
+    min_x = max(0, min_x - padding)
+    max_x = max_x + padding
+    min_y = max(0, min_y - padding)
+    max_y = max_y + padding
+
+    # Create grid
+    width = max_x - min_x + 1
+    height = max_y - min_y + 1
+    grid = [[empty_char for _ in range(width)] for _ in range(height)]
+
+    # Determine markers
+    if markers is None:
+        markers = [str(i + 1) for i in range(len(points))]
+    elif len(markers) < len(points):
+        # Extend markers if not enough provided
+        markers = markers + [str(i + 1) for i in range(len(markers), len(points))]
+
+    # Mark points (if duplicate points, first marker wins)
+    point_to_marker = {}
+    for point, marker in zip(points, markers):
+        if point not in point_to_marker:
+            point_to_marker[point] = marker
+
+    for point, marker in point_to_marker.items():
+        x, y = point
+        grid[y - min_y][x - min_x] = marker
+
+    # Print grid (y-axis reversed for display)
+    if show_axes:
+        print("Grid visualization:")
+        print(f"  X: {min_x} to {max_x}, Y: {min_y} to {max_y}")
+
+    for y in range(height - 1, -1, -1):
+        if show_axes:
+            print(f"{y + min_y:3d} ", end="")
+        for x in range(width):
+            print(grid[y][x], end="")
+        print()
+
+    if show_axes:
+        print("    ", end="")
+        for x in range(width):
+            print(str((x + min_x) % 10), end="")
+        print()
+
+    # Print point coordinates
+    print("Points:", end=" ")
+    for i, point in enumerate(points):
+        marker = markers[i] if i < len(markers) else str(i + 1)
+        print(f"{marker}={point}", end="  ")
+    print()
+

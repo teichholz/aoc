@@ -20,23 +20,26 @@ def part1():
 
     return password
 
-class Dial:
-    def __init__(self) -> None:
-        self.password = 0
-        self.value = 50
-
-    def rotate(self, steps: int) -> None:
-        self.value += steps
-
-    def forward(self, steps: int) -> None:
-        pass
-
-    def backward(self, steps: int) -> None:
-        pass
-
 def part2():
     parsed = [parse(line) for line in input]
     sum = 50
     password = 0
+
+    for steps in parsed:
+        assert steps != 0
+        if steps > 0:
+            zeros = (sum + steps) // 100
+            sum = (sum + steps) % 100
+        else:
+            abs_steps = -steps
+            if sum == 0:
+                zeros = abs_steps // 100
+            elif abs_steps >= sum:
+                zeros = (abs_steps - sum) // 100 + 1
+            else:
+                zeros = 0
+            sum = (sum - abs_steps) % 100
+
+        password += zeros
 
     return password
